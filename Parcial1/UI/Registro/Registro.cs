@@ -26,7 +26,9 @@ namespace Parcial1.UI.Registro
             grupos.GrupoId = Convert.ToInt32(IdGruposnumericUpDown.Value);
             grupos.Fecha = FechadateTimePicker.Value;
             grupos.Descripcion = DescripciontextBox.Text;
+            grupos.Integrantes = Convert.ToInt32(IntegrantestextBox.Text);
             grupos.Cantidad = Convert.ToInt32(CantidadtextBox.Text);
+
             grupos.Grupo = Convert.ToInt32(GrupostextBox.Text);
             return grupos;
 
@@ -119,11 +121,7 @@ namespace Parcial1.UI.Registro
 
             
         }
-        public void CalcularIntegrantes()
-        {
-
-            
-
-        }
+       
+       
     }
 }
