@@ -184,6 +184,7 @@
             this.GrupostextBox.Name = "GrupostextBox";
             this.GrupostextBox.Size = new System.Drawing.Size(100, 20);
             this.GrupostextBox.TabIndex = 14;
+            //this.GrupostextBox.TextChanged += new System.EventHandler(this.GrupostextBox_TextChanged);
             // 
             // IntegrantestextBox
             // 
@@ -191,6 +192,7 @@
             this.IntegrantestextBox.Name = "IntegrantestextBox";
             this.IntegrantestextBox.Size = new System.Drawing.Size(100, 20);
             this.IntegrantestextBox.TabIndex = 15;
+            //this.IntegrantestextBox.TextChanged += new System.EventHandler(this.IntegrantestextBox_TextChanged);
             // 
             // errorProvider
             // 

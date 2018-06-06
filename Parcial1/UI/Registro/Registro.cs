@@ -19,7 +19,7 @@ namespace Parcial1.UI.Registro
         {
             InitializeComponent();
         }
-        
+
         public Grupos LlenaClase()
         {
             Grupos grupos = new Grupos();
@@ -28,6 +28,7 @@ namespace Parcial1.UI.Registro
             grupos.Descripcion = DescripciontextBox.Text;
             grupos.Integrantes = Convert.ToInt32(IntegrantestextBox.Text);
             grupos.Cantidad = Convert.ToInt32(CantidadtextBox.Text);
+
 
             grupos.Grupo = Convert.ToInt32(GrupostextBox.Text);
             return grupos;
@@ -38,42 +39,42 @@ namespace Parcial1.UI.Registro
         {
             Grupos grupos = LlenaClase();
             bool paso = false;
-            if(!Validar())
+            if (!Validar())
             {
                 if (IdGruposnumericUpDown.Value == 0)
                     paso = BLL.GruposBLL.Guardar(grupos);
                 else
-                    paso = BLL.GruposBLL.Modificar(LlenaClase());
+                    paso = BLL.GruposBLL.Modificar(grupos);
                 if (paso)
                     MessageBox.Show("Guardado", "EXITO!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 else
                     MessageBox.Show("No se Guardo", "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-                 
+
         }
         public bool Validar()
         {
 
             bool Errores = false;
-            
-            if(String.IsNullOrWhiteSpace(DescripciontextBox.Text))
+
+            if (String.IsNullOrWhiteSpace(DescripciontextBox.Text))
             {
                 errorProvider.SetError(DescripciontextBox, "Descripcion Vacia");
                 Errores = true;
 
             }
-            if(CantidadtextBox.Text== String.Empty)
+            if (CantidadtextBox.Text == String.Empty)
             {
                 errorProvider.SetError(CantidadtextBox, "Cantidad Vacia");
                 Errores = true;
             }
-            if(IntegrantestextBox.Text==String.Empty)
+            if (IntegrantestextBox.Text == String.Empty)
             {
                 errorProvider.SetError(IntegrantestextBox, "Integrantes Vacio");
                 Errores = true;
             }
-            if(GrupostextBox.Text==string.Empty)
+            if (GrupostextBox.Text == string.Empty)
             {
                 errorProvider.SetError(GrupostextBox, "Grupo vacio");
                 Errores = true;
@@ -108,7 +109,7 @@ namespace Parcial1.UI.Registro
         {
             int id = Convert.ToInt32(IdGruposnumericUpDown.Value);
             Grupos grupos = BLL.GruposBLL.Buscar(id);
-            if(grupos!=null)
+            if (grupos != null)
             {
                 DescripciontextBox.Text = grupos.Descripcion;
                 FechadateTimePicker.Value = grupos.Fecha;
@@ -119,9 +120,9 @@ namespace Parcial1.UI.Registro
             }
 
 
-            
+
         }
-       
-       
+
+        
     }
 }

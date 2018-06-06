@@ -71,7 +71,9 @@ namespace Parcial1.BLL
             Contexto contexto = new Contexto();
             Grupos grupos = new Grupos();
             try
+                 
             {
+                grupos = contexto.gruposs.Find(id);
                 contexto.gruposs.Remove(grupos);
                 if(contexto.SaveChanges()>0)
                 {
